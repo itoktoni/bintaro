@@ -62,7 +62,7 @@ class Query
                     $cache = $cache->where('menu_code', $action)->first();
                 }
 
-                return $cache;
+                return (array)$cache;
             }
         }
 

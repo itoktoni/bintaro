@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BersihController;
 use App\Http\Controllers\Core\UserController;
 use App\Http\Controllers\Core\WebhookController;
 use Illuminate\Support\Facades\Route;
@@ -18,4 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [UserController::class, 'postLoginApi'])->name('postLoginApi');
 Route::post('deploy', [WebhookController::class, 'deploy'])->name('deploy');
 
-Route::middleware(['auth:sanctum'])->group(function () {});
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('bersih', [BersihController::class, 'postCreate'])->name('postCreateBersih');
+});

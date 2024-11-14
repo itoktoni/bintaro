@@ -13,6 +13,7 @@ use App\Facades\Model\RoleModel;
 use App\Facades\Model\UserModel;
 use App\Notifications\VerifyUserQueue;
 use Database\Factories\UserFactory;
+use ElipZis\Cacheable\Models\Traits\Cacheable;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail as AuthMustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -39,6 +40,7 @@ class User extends Authenticatable implements AuthMustVerifyEmail
     use OptionTrait;
     use Sortable;
     use UserEntity;
+    use Cacheable;
 
     protected $table = 'users';
 

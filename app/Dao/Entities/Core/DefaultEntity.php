@@ -19,6 +19,11 @@ trait DefaultEntity
         return self::getModel()->getKeyName();
     }
 
+    public static function getAllByKey()
+    {
+        return self::getModel()->get()->keyBy(self::field_primary());
+    }
+
     public function getFieldKeyAttribute()
     {
         return $this->{$this->field_key()};

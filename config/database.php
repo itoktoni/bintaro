@@ -121,6 +121,21 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'transaction' => [
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_TRANSACTION_HOST', '127.0.0.1'),
+            'port' => env('DB_TRANSACTION_PORT', '5432'),
+            'database' => env('DB_TRANSACTION_DATABASE', 'forge'),
+            'username' => env('DB_TRANSACTION_USERNAME', 'forge'),
+            'password' => env('DB_TRANSACTION_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
